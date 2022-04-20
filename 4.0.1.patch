@@ -1,0 +1,26 @@
+diff --git a/sycl/plugins/hip/pi_hip.hpp b/sycl/plugins/hip/pi_hip.hpp
+index c543001..4b29a64 100644
+--- a/sycl/plugins/hip/pi_hip.hpp
++++ b/sycl/plugins/hip/pi_hip.hpp
+@@ -18,6 +18,8 @@
+ #ifndef PI_HIP_HPP
+ #define PI_HIP_HPP
+
++#define __HIP_PLATFORM_HCC__
++
+ #include "CL/sycl/detail/pi.h"
+ #include <array>
+ #include <atomic>
+diff --git a/sycl/source/abi_replacements_linux.txt b/sycl/source/abi_replacements_linux.txt
+index edf56b2..d4c3828 100644
+--- a/sycl/source/abi_replacements_linux.txt
++++ b/sycl/source/abi_replacements_linux.txt
+@@ -6,7 +6,3 @@ _ZN2cl4sycl10level_zero12make_contextERKSt6vectorINS0_6deviceESaIS3_EEm = _ZN2cl
+ _ZN2cl4sycl10level_zero11make_deviceERKNS0_8platformEm = _ZN2cl4sycl3ext6oneapi10level_zero11make_deviceERKNS0_8platformEm;
+ _ZN2cl4sycl10level_zero10make_eventERKNS0_7contextEmb = _ZN2cl4sycl3ext6oneapi10level_zero10make_eventERKNS0_7contextEmb;
+ _ZN2cl4sycl10level_zero13make_platformEm = _ZN2cl4sycl3ext6oneapi10level_zero13make_platformEm;
+-_ZN2cl4sycl5INTEL15online_compilerILNS1_15source_languageE0EE7compileIJSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaISC_EEEEES6_IhSaIhEERKS
+-_ZN2cl4sycl5INTEL15online_compilerILNS1_15source_languageE1EE7compileIJSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaISC_EEEEES6_IhSaIhEERKS
+-_ZN2cl4sycl3ext5intel15online_compilerILNS2_15source_languageE1EE7compileIJSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaISD_EEEEES7_IhSaIhE
+-_ZN2cl4sycl3ext5intel15online_compilerILNS2_15source_languageE0EE7compileIJSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaISD_EEEEES7_IhSaIhE
+\ No newline at end of file

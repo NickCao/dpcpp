@@ -1,10 +1,14 @@
+module load compiler/rocm/4.0.1
 python3 llvm/buildbot/configure.py --hip --hip-platform AMD -t release \
+  --cmake-opt="-DLEVEL_ZERO_INCLUDE_DIR=/public/home/thu_pacman/nickcao/l0/include" \
+  --cmake-opt="-DLEVEL_ZERO_LIBRARY=/public/home/thu_pacman/nickcao/l0/lib64/libze_loader.so" \
   --cmake-opt="-DBOOST_MP11_SOURCE_DIR=/public/home/thu_pacman/nickcao/mp11-develop" \
   --cmake-opt="-DLLVMGenXIntrinsics_SOURCE_DIR=/public/home/thu_pacman/nickcao/upload/vc-intrinsics" \
   --cmake-opt="-DOpenCL_HEADERS=/public/home/thu_pacman/nickcao/upload/OpenCL-Headers" \
   --cmake-opt="-DOpenCL_LIBRARY_SRC=/public/home/thu_pacman/nickcao/upload/OpenCL-ICD-Loader" \
   --cmake-opt="-DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR=/public/home/thu_pacman/nickcao/upload/SPIRV-Headers" \
-  --cmake-opt="-DSYCL_BUILD_PI_HIP_INCLUDE_DIR=/opt/rocm-4.0.1/hip/include" \
-  --cmake-opt="-DSYCL_BUILD_PI_HIP_HSA_INCLUDE_DIR=/opt/rocm-4.0.1/hsa/include" \
-  --cmake-opt="-DSYCL_BUILD_PI_HIP_AMD_LIBRARY=/opt/rocm-4.0.1/hip/lib/libamdhip64.so" 
+  --cmake-opt="-DSYCL_BUILD_PI_HIP_INCLUDE_DIR=/public/software/compiler/rocm/rocm-4.0.1/hip/include" \
+  --cmake-opt="-DSYCL_BUILD_PI_HIP_HSA_INCLUDE_DIR=/public/software/compiler/rocm/rocm-4.0.1/hsa/include" \
+  --cmake-opt="-DSYCL_BUILD_PI_HIP_AMD_LIBRARY=/public/software/compiler/rocm/rocm-4.0.1/hip/lib/libamdhip64.so" \
+  --cmake-gen "Unix Makefiles"
 
