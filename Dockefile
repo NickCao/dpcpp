@@ -1,8 +1,8 @@
 FROM centos:7
 RUN yum install -y centos-release-scl epel-release
-RUN yum install -y devtoolset-9 cmake3 ninja-build git
+RUN yum install -y devtoolset-9 cmake3 ninja-build git rh-python38
 RUN ln -s /usr/bin/cmake3 /usr/bin/cmake
-RUN scl enable devtoolset-9 bash
+RUN scl enable devtoolset-9 rh-python38 bash
 
 COPY DTK-21.10.tar.gz .
 RUN tar xf DTK-21.10.tar.gz
